@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f6f3" />
+  <meta name="description" content="A focused, offline-first Indian Polity study and practice app for RRB, SSC and PSC exams." />
+  <title>Polity Prep — Learn. Recall. Score.</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Polity Prep home"><span class="brand-mark">P</span><span>polity<span class="brand-light">prep</span><small>RRB · SSC · PSC</small></span></a>
+      <div class="side-label">STUDY SPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">◫</span>Overview</button>
+        <button class="nav-item" data-page="learn"><span class="nav-icon">▤</span>Learn <span class="nav-count" id="module-count">28</span></button>
+        <button class="nav-item" data-page="practice"><span class="nav-icon">◉</span>Practice</button>
+        <button class="nav-item" data-page="pyqs"><span class="nav-icon">▣</span>Previous-year questions</button>
+        <button class="nav-item" data-page="borrowed"><span class="nav-icon">⇄</span>Borrowed features</button>
+        <button class="nav-item" data-page="revise"><span class="nav-icon">↻</span>Revise</button>
+      </nav>
+      <div class="side-label side-label-spaced">YOUR PROGRESS</div>
+      <nav class="main-nav" aria-label="Progress navigation">
+        <button class="nav-item" data-page="progress"><span class="nav-icon">▥</span>My progress</button>
+        <button class="nav-item" data-page="map"><span class="nav-icon">⌘</span>Knowledge map</button>
+        <button class="nav-item" data-page="games"><span class="nav-icon">◉</span>Recall games</button>
+        <button class="nav-item" data-page="planner"><span class="nav-icon">▦</span>Exam planner</button>
+        <button class="nav-item" data-page="sources"><span class="nav-icon">⌁</span>Sources & method</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="streak-card"><div class="streak-head"><span>✦</span><span class="streak-number" id="streak">0</span><span>day streak</span></div><div class="streak-dots" id="streak-dots"></div><p>Small sessions add up.</p></div><button class="theme-toggle" id="theme-toggle"><span>◐</span> Switch appearance <span id="theme-label">Dark</span></button><div class="side-foot">Made for steady progress <span>✳</span></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobile-menu" aria-label="Open menu">☰</button><div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="page-label">Overview</strong></div><div class="top-actions"><span class="offline-pill"><i></i> Offline ready</span><button class="search-trigger" id="search-open"><span>⌕</span><span>Search polity</span><kbd>⌘ K</kbd></button><button class="avatar" aria-label="Study profile">A</button></div></header>
+      <div class="text-size-controls" aria-label="Reading text size"><span>Text</span><button id="text-smaller" aria-label="Decrease text size">A−</button><button id="text-larger" aria-label="Increase text size">A+</button></div>
+      <div class="page-content" id="page-content"></div>
+      <footer class="app-footer">Short lessons. Strong recall. <span>Polity Prep · Works on this device</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="search-modal" aria-hidden="true"><section class="search-modal" role="dialog" aria-modal="true" aria-label="Search polity"><div class="search-box"><span>⌕</span><input id="search-input" placeholder="Try “Article 32”, Money Bill, Preamble…" autocomplete="off" /><button id="search-close">Esc</button></div><div class="search-results" id="search-results"><div class="search-hint">Search lessons, articles, amendments and revision facts.</div></div></section></div>
+  <script src="data.js"></script>
+  <script src="srs.js"></script>
+  <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('./service-worker.js').catch(() => {});</script>
+</body>
+</html>

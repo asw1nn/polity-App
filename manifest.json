@@ -1,0 +1,10 @@
+{
+  "name": "Polity Prep",
+  "short_name": "Polity Prep",
+  "description": "Offline Indian Polity study and recall app",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f6f3",
+  "theme_color": "#f5f6f3",
+  "icons": []
+}
